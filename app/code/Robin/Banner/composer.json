@@ -1,6 +1,6 @@
 {
-    "name": "demo/module-bai2",
-    "description": "Set up scripts",
+    "name": "robin/module-banner",
+    "description": "Manage Banner",
     "require": {
         "php": "~5.5.0|~5.6.0|~7.0.0",
         "magento/module-store": "100.0.*",
@@ -20,7 +20,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Robin\\Bai2\\": ""
+            "Robin\\banner\\": ""
         }
     }
 }

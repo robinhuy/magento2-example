@@ -1,6 +1,6 @@
 <?php
 
-namespace Robin\Bai2\Model\ResourceModel;
+namespace Robin\Banner\Model\ResourceModel;
 
 class Banner extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {

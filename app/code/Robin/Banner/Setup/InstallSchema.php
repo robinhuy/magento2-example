@@ -1,5 +1,5 @@
 <?php
-namespace Robin\Bai2\Setup;
+namespace Robin\Banner\Setup;
 
 use Magento\Framework\Setup\SchemaSetupInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
