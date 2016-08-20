@@ -1,0 +1,30 @@
+#weather {
+    float: left;
+    margin-top: 15px;
+    padding: 20px 40px 0 20px;
+    width: 60%;
+    color: #ffffff;
+    background-color: rgba(17, 146, 211, 0.75);
+    font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.col {
+    width: 50%;
+    float: left;
+}
+
+.mid-content .image {
+    float: left;
+    width: 60%;
+}
+
+.mid-content .temperature {
+    font-size: 40px;
+    padding-top: 30px;
+    float: left;
+    width: 40%;
+}
+
+.mid-content .info {
+    padding-top: 18px;
+}
