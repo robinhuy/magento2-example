@@ -1,6 +1,6 @@
 {
-    "name": "robin/module-bai1",
-    "description": "Hello World",
+    "name": "demo/module-bai2",
+    "description": "Set up scripts",
     "require": {
         "php": "~5.5.0|~5.6.0|~7.0.0",
         "magento/module-store": "100.0.*",
@@ -10,7 +10,7 @@
         "lib-libxml": "*"
     },
     "type": "magento2-module",
-    "version": "100.0.5",
+    "version": "0.0.1",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
@@ -20,7 +20,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Robin\\Bai1\\": ""
+            "Robin\\Bai2\\": ""
         }
     }
 }
