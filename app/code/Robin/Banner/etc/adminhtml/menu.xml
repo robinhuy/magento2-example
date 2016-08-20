@@ -1,0 +1,7 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Robin_Banner::banner_manager" title="Banner Manager" module="Robin_Banner" resource="Robin_Banner::banner_manager"/>
+        <add id="Robin_Banner::list_banner" title="List Banners" module="Robin_Banner" action="banner" resource="Robin_Banner::banner_manager" parent="Robin_Banner::banner_manager"/>
+        <add id="Robin_Banner::new_banner" title="New Banner" module="Robin_Banner" action="banner/index/new" resource="Robin_Banner::save" parent="Robin_Banner::banner_manager"/>
+    </menu>
+</config>
