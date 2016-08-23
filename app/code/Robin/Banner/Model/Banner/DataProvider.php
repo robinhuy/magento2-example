@@ -11,6 +11,7 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
     protected $collection;
     protected $dataPersistor;
     protected $loadedData;
+    protected $storeManager;
 
     public function __construct(
         $name,
@@ -18,12 +19,14 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
         $requestFieldName,
         CollectionFactory $bannerCollectionFactory,
         DataPersistorInterface $dataPersistor,
+        \Magento\Store\Model\StoreManagerInterface $storeManager,
         array $meta = [],
         array $data = []
     )
     {
         $this->collection = $bannerCollectionFactory->create();
         $this->dataPersistor = $dataPersistor;
+        $this->storeManager = $storeManager;
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
         $this->meta = $this->prepareMeta($this->meta);
     }
@@ -49,7 +52,16 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 
         
         foreach ($items as $banner) {
-            $this->loadedData[$banner->getId()] = $banner->getData();
+            $data = $banner->getData();
+            $image = $data['image'];
+            if ($image && is_string($image)) {
+                $data['images'][0]['name'] = $image;
+                $data['images'][0]['url'] = $this->storeManager->getStore()
+                        ->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA)
+                    . 'banner/images/' . $image;
+            }
+
+            $this->loadedData[$banner->getId()] = $data;
         }
 
         $data = $this->dataPersistor->get('banner');

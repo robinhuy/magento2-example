@@ -22,7 +22,7 @@
 
     <dataSource name="banner_form_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Magento\Cms\Model\Page\DataProvider</argument>
+            <argument name="class" xsi:type="string">Robin\Banner\Model\Banner\DataProvider</argument>
             <argument name="name" xsi:type="string">banner_form_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
@@ -73,16 +73,19 @@
                 </item>
             </argument>
         </field>
-        <field name="image">
+        <field name="images">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Image</item>
-                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataType" xsi:type="string">string</item>
                     <item name="source" xsi:type="string">banner</item>
-                    <item name="dataScope" xsi:type="string">image</item>
-                    <item name="validation" xsi:type="array">
-                        <item name="require-entry" xsi:type="boolean">true</item>
+                    <item name="label" xsi:type="string" translate="true">Image</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                    <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item>
+                    <item name="required" xsi:type="boolean">true</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="banner/index_image/upload"/>
                     </item>
                 </item>
             </argument>

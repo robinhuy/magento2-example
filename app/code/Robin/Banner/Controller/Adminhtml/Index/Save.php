@@ -6,7 +6,7 @@ use Magento\Backend\App\Action;
 use Robin\Banner\Model\Banner;
 use Magento\Framework\App\Request\DataPersistorInterface;
 
-class Save extends \Magento\Backend\App\Action
+class Save extends Action
 {
     /**
      * Authorization level of a basic admin session
@@ -44,6 +44,14 @@ class Save extends \Magento\Backend\App\Action
             }
             if (empty($data['id'])) {
                 $data['id'] = null;
+            }
+            if (empty($data['images'])) {
+                $data['images'] = null;
+            } else {
+                if ($data['images'][0] && $data['images'][0]['name'])
+                    $data['image'] = $data['images'][0]['name'];
+                else
+                    $data['image'] = null;
             }
 
             // Init model and load by ID if exists
