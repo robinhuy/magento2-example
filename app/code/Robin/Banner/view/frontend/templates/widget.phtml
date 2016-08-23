@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('Robin_Banner::css/jquery.bxslider.css') ?>"/>
+
+<ul class="bxslider">
+<?php
+    $data = $this->getData('banners');
+    $auto = $this->getData('auto') ? "true" : "false";
+    $pager = $this->getData('pager') ? "true" : "false";
+    $speed = intval($this->getData('speed'));
+
+    foreach ($data as $d) {
+        ?>
+        <li>
+            <a href="<?php echo $d['link'] ?>">
+                <img src="<?php echo $this->getData('mediaURL') . $d['image']; ?>"/>
+            </a>
+        </li>
+        <?php
+    }
+?>
+</ul>
+
+<script>
+    require(['jquery', 'bxslider'], function ($) {
+        $(function () {
+            $('.bxslider').bxSlider({
+                auto: <?php echo $auto ?>,
+                pager: <?php echo $pager ?>,
+                speed: <?php echo $speed ?>
+            });
+        });
+    });
+</script>

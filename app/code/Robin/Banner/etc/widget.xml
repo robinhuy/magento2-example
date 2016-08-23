@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="robin_banner_manager" class="Robin\Banner\Block\Banner\BannerWidget">
+        <label translate="true">Banner Widget</label>
+
+        <description translate="true">Display Banner</description>
+
+        <parameters>
+            <parameter name="auto" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Automatically transition</label>
+            </parameter>
+
+            <parameter name="pager" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display pager</label>
+            </parameter>
+
+            <parameter name="speed" xsi:type="text" visible="true">
+                <label translate="true">Slide transition duration (in ms)</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
